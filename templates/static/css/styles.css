@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FCF4E8; /* Updated background color */
+    
+  }
+  
+  header {
+    text-align: left;
+    padding: 0px 50px;
+    margin-bottom: 30px; /* Adds space between the header and the product section */
+  }
+  
+  h1 {
+    font-size: 48px; /* Adjust as needed */
+    color: #333; /* Dark text color */
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 24px; /* Adjust as needed */
+    color: #666; /* Lighter text color for the subtitle */
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #5F967A; /* Updated button color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-transform: uppercase; /* Makes letters uppercase */
+    font-weight: bold; /* Makes the font bold */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px; /* Adjust as needed */
+  }
+  
+  button:hover {
+    background-color: #527a68; /* A darker shade for hover effect */
+  }
+  
+  .products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left; /* Aligns text to the left */
+    background: white; /* White background for the product cards */
+    width: 300px; /* Fixes width of the product cards */
+    margin-top: 30px; /* Adds some space at the top */
+  }
+  
+  .product img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Adds space between the image and the text */
+  }
+  
+  .product p {
+    font-size: 20px; /* Adjust as needed */
+    margin: 0;
+    color: #333; /* Dark text color for the product name */
+  }
+  
+  .product span {
+    font-size: 24px; /* Adjust as needed */
+    color: #5F967A; /* A shade of green to match the button */
+    font-weight: bold; /* Makes the price bold */
+  }
+  
+  .featured {
+    border-color: gold;
+    position: relative; /* Needed to position the badge */
+  }
+  
+  .featured::after {
+    content: 'Featured';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: gold;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+ 
+  
+  /* Style for the right-aligned image */
+  .right-aligned-image {
+    border-top-left-radius: 200px;
+    position: absolute;
+    right: 0;
+    padding:none;
+    height: fit-content;
+    top: 150px; /* Adjust as needed for alignment */
+  }
+  

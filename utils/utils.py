@@ -101,5 +101,47 @@ def text_matching(input_string, data_file):
 
     return most_similar_products, time_taken
 
+def image_matching(input_image, data_file):
+    """
+    Finds the most similar room based on the description embeddings.
 
+    :param input_image: The input image to compare.
+    :param data_file: Path to the pickle file containing room descriptions and their embeddings.
+    :return: Top 5 most similar product descriptions and the time taken to run the function.
+    """
+    start_time = time.time()
+    df = pd.read_pickle(data_file)
+
+    # Generate embedding for the input string
+    input_embedding = image_to_embeddings(input_image)
+
+    # Extract description embeddings from the DataFrame
+    room_embeddings = np.array(df['image_embeddings'].tolist())
+
+    # Calculate cosine similarities
+    similarities = cosine_similarity(input_embedding, room_embeddings).flatten()
+
+    # Find the indices of the top 5 most similar products
+    most_similar_indices = np.argsort(similarities)[-5:][::-1]
+
+    # Retrieve the most similar products
+    most_similar_rooms = df.iloc[most_similar_indices]
+
+    # Display images of the top 5 products
+    for idx in most_similar_indices:
+        root_folder = '/Users/kabir/FRE-7773-Project/data/images/room_scenes/'
+        image_name = df.iloc[idx]['Room']
+        image_path = find_image(root_folder, image_name)
+        
+        # Check if the image path list is not empty
+        if image_path:
+            img = Image.open(image_path[0])
+            display(img)
+        else:
+            print(f"No image found for {image_name}")
+
+    # Calculate the time taken
+    time_taken = time.time() - start_time
+
+    return most_similar_rooms, time_taken
 

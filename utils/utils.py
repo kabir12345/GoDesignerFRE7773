@@ -89,12 +89,12 @@ def text_matching(input_string, data_file):
     most_similar_products = df.iloc[most_similar_indices]
 
     # Display images of the top 5 products
-    for idx in most_similar_indices:
-        root_folder = '/Users/kabir/FRE-7773-Project/data/images'
-        image_name = re.sub(r'^[^0-9]*', '', df.iloc[idx]['Image'])
-        image_path = find_image(root_folder, image_name)
-        img = Image.open(image_path[0])
-        display(img)
+    # for idx in most_similar_indices:
+    #     root_folder = '/Users/kabir/FRE-7773-Project/data/images'
+    #     image_name = re.sub(r'^[^0-9]*', '', df.iloc[idx]['Image'])
+    #     image_path = find_image(root_folder, image_name)
+    #     img = Image.open(image_path[0])
+    #     display(img)
 
     # Calculate the time taken
     time_taken = time.time() - start_time
@@ -128,17 +128,17 @@ def image_matching(input_image, data_file):
     most_similar_rooms = df.iloc[most_similar_indices]
 
     # Display images of the top 5 products
-    for idx in most_similar_indices:
-        root_folder = '/Users/kabir/FRE-7773-Project/data/images/room_scenes/'
-        image_name = df.iloc[idx]['Room']
-        image_path = find_image(root_folder, image_name)
+    # for idx in most_similar_indices:
+    #     root_folder = '/Users/kabir/FRE-7773-Project/data/images/room_scenes/'
+    #     image_name = df.iloc[idx]['Room']
+    #     image_path = find_image(root_folder, image_name)
         
-        # Check if the image path list is not empty
-        if image_path:
-            img = Image.open(image_path[0])
-            display(img)
-        else:
-            print(f"No image found for {image_name}")
+    #     # Check if the image path list is not empty
+    #     if image_path:
+    #         img = Image.open(image_path[0])
+    #         display(img)
+    #     else:
+    #         print(f"No image found for {image_name}")
 
     # Calculate the time taken
     time_taken = time.time() - start_time

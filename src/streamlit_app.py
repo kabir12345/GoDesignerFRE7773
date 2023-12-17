@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
-import os, sys
+import os,sys
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, parent_dir)
 import re
 from utils.utils import find_image, image_matching
 import random
@@ -37,7 +39,7 @@ if st.button("Get Recommendations"):
         response = requests.get(f"http://127.0.0.1:5002/dashboard?x={input_text}")
         
         # Process a successful response
-        st.success("Roduct Recommendations")
+        st.success("Product Recommendations")
         if response.status_code == 200:
             prediction = response.json()['data']
             
